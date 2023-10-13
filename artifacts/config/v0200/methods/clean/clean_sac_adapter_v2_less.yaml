@@ -1,0 +1,10 @@
+method:
+  name: Clean_SAC_Adapter_V2
+  args: 
+    sb3_init_kwargs:
+      verbose: True
+    policy_params:
+      hypernetwork_kwargs:
+        skip_connection: True
+        hnet_kwargs:
+          hypernetwork_layers: less

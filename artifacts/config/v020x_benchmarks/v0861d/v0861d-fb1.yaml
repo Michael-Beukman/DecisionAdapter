@@ -1,0 +1,19 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0861d/v0861d-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_adapter_v1.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0861d-fb1
+method:
+  args:
+    policy_params:
+      hypernetwork_kwargs:
+        hnet_kwargs:
+          hypernetwork_layers: []
+        skip_connection: true
+    sb3_init_kwargs:
+      verbose: true
+  load_checkpoint: v0661d-fb1
+  load_checkpoint_if_big_seed: v0761d-fb1
+  name: Clean_SAC_Adapter_V1

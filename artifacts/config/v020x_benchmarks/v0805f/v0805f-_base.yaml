@@ -1,0 +1,30 @@
+env:
+  args:
+    force_mag: 100
+  name: ComplexODEBoundedReward
+eval:
+  context_file:
+  - artifacts/config/v0200/contexts/ode/eval/extended_short_eval_good_5.yaml
+  episodes: 2005
+infra:
+  cores: 8
+  gpus: auto
+  seeds: 16
+meta:
+  experiment_name: v0805f
+  is_clean_rl: true
+  message: GenRLise(.; ComplexODEBoundedReward)
+  run_name: v0805f-_base
+train:
+  checkpoint_frequency: 100000
+  context_encoder:
+    args:
+      context_dimension: 1
+      max:
+      - 5
+      min:
+      - 0
+    name: Normalised
+  context_file: artifacts/config/v0200/contexts/ode/train/test_train_ode_75_all_state.yaml
+  do_train: true
+  steps: 0

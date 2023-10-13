@@ -1,0 +1,4 @@
+dims: 5
+name: SequenceSampler
+list_of_contexts: [[9.8, 1.0, 0.1, 0.5, 10.0]]
+desc: TrainTrain(force_mag; 10.0)

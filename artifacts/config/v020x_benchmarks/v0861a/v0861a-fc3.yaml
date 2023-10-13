@@ -1,0 +1,10 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0861a/v0861a-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_adapter_v2_less.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0861a-fc3
+method:
+  load_checkpoint: v0661a-fc3
+  load_checkpoint_if_big_seed: v0761a-fc3

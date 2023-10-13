@@ -1,0 +1,4 @@
+dims: 5
+name: SequenceSampler
+list_of_contexts: [[9.8, 1.0, 0.1, 1.58, 10.0]]
+desc: TrainTrain(length; 1.58)

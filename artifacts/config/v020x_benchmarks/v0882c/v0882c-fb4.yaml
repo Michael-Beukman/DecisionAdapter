@@ -1,0 +1,12 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0882c/v0882c-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_adapter_v1_less.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0882c-fb4
+method:
+  load_checkpoint: v0682c-fb4
+  load_checkpoint_if_big_seed: v0782c-fb4
+train:
+  context_file: artifacts/config/v0200/contexts/cartpole_all/masspole/4.yaml

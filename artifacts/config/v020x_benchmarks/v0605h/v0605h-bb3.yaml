@@ -1,0 +1,11 @@
+inherit:
+  - artifacts/config/v0200/v0200-_default.yaml
+  - artifacts/config/v020x_benchmarks/v0605h/v0605h-_base.yaml
+  - artifacts/config/v0200/methods/clean/clean_sac_concat_more_comparable_deep_activation.yaml
+
+
+
+
+meta:
+  run_name: v0605h-bb3
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)

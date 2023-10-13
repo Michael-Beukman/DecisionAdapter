@@ -1,0 +1,4 @@
+method:
+  name: Clean_SAC_Unaware
+  args:
+    net_arch: [205, 205, 205]

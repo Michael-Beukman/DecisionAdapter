@@ -1,0 +1,15 @@
+inherit:
+  - artifacts/config/v0200/v0200-_default.yaml
+  - artifacts/config/v020x_benchmarks/v0761b/v0761b-_base.yaml
+  - artifacts/config/v0200/methods/clean/clean_sac_adapter_v1_less.yaml
+
+
+method:
+  args: 
+    policy_params:
+      hypernetwork_kwargs:
+        adapter_layers: [8]
+
+meta:
+  run_name: v0761b-fb3
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)

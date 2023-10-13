@@ -1,0 +1,16 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0861b/v0861b-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_adapter_v1_less.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0861b-fb5
+method:
+  args:
+    policy_params:
+      hypernetwork_kwargs:
+        adapter_layers:
+        - 32
+        - 32
+  load_checkpoint: v0661b-fb5
+  load_checkpoint_if_big_seed: v0761b-fb5

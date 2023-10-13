@@ -1,0 +1,48 @@
+env:
+  args:
+    flatten_state: true
+  name: CartPoleContinuous
+eval:
+  context_file:
+  - artifacts/config/v0200/contexts/cp/eval_extended_multiple_5_proper.yaml
+  episodes: 1505
+infra:
+  cores: 8
+  gpus: auto
+  seeds: 16
+  start_seed: 8
+meta:
+  experiment_name: v1709_3b
+  is_clean_rl: true
+  message: GenRLise(.; ComplexODEBoundedReward)
+  run_name: v1709_3b-_base
+train:
+  checkpoint_frequency: 100000
+  context_encoder:
+    args:
+      context_dimension: 6
+      extra_dimensions: 1
+      noise:
+        type: gaussian
+        sigma: 0.2
+        mean: 0.0
+    base:
+      args:
+        context_dimension: 5
+        max:
+        - 9.8
+        - 1.0
+        - 0.1
+        - 6
+        - 10.0
+        min:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      name: Normalised
+    name: DummyDimensionGaussian
+  context_file: artifacts/config/v0200/contexts/cp/train_4_sparse.yaml
+  do_train: true
+  steps: 0

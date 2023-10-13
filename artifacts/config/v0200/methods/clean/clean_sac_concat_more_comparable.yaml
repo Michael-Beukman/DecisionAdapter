@@ -1,0 +1,4 @@
+method:
+  name: Clean_SAC_Concat
+  args: 
+    net_arch: [288, 288]

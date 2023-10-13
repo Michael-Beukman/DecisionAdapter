@@ -1,0 +1,39 @@
+meta:
+  run_name: v1619_1b-_base
+  experiment_name: v1619_1b
+  message: GenRLise(.; ComplexODEBoundedReward)
+  is_clean_rl: True
+
+infra:
+  gpus:  auto
+  seeds: 8
+  cores: 8
+
+env:
+  name: CartPoleContinuous
+  args:
+    flatten_state: True
+
+train:
+  context_encoder: 
+    name: DummyDimensions
+    args:
+      context_dimension: 6
+      extra_dimensions: 1
+      fixed_vals: 1
+    base:
+      name: Normalised
+      args:
+        context_dimension: 5
+        min: [ 0,  0,  0,  0,  0]
+        max: [ 9.8,  1.0,  0.1,  6,  10.0]
+  do_train: True
+  steps: 900000
+  context_file: artifacts/config/v0200/contexts/cp/train_4_sparse.yaml
+  checkpoint_frequency: 100000
+
+
+eval:
+  context_file:
+  - artifacts/config/v0200/contexts/cp/eval_extended_multiple_5_proper.yaml
+  episodes: 1505

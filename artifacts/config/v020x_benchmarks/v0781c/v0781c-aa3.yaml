@@ -1,0 +1,13 @@
+inherit:
+  - artifacts/config/v0200/v0200-_default.yaml
+  - artifacts/config/v020x_benchmarks/v0781c/v0781c-_base.yaml
+  - artifacts/config/v0200/methods/clean/clean_sac_unaware_more_comparable_activation.yaml
+
+train:
+  context_file: artifacts/config/v0200/contexts/cartpole_all/masspole/2.yaml
+
+
+meta:
+  run_name: v0781c-aa3
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+

@@ -1,0 +1,10 @@
+dims: 1
+name: StateAndContext
+how_many_times_run_same_context: 4
+desc: 'Train[-0.1,0.1;MultState]'
+context:
+  name: SequenceSampler
+  list_of_contexts: [[-7.5], [7.5]]
+state:
+  name: SequenceSampler
+  list_of_contexts: [[1.0], [0.5], [-0.5], [-1.0]]

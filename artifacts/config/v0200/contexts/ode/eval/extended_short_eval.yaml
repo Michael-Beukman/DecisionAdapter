@@ -1,0 +1,13 @@
+dims: 1
+desc: '-10,10'
+name: StateAndContext
+how_many_times_run_same_context: 3
+context:
+  name: Linspace
+  mins: [-20]
+  maxs: [20]
+  episodes: 401
+
+state:
+  name: SequenceSampler
+  list_of_contexts: [[1.0]]

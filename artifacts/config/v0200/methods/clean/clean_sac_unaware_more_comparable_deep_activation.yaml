@@ -1,0 +1,5 @@
+method:
+  name: Clean_SAC_Unaware
+  args:
+    net_arch: [205, 205, 205]
+    actor_act_at_end: True

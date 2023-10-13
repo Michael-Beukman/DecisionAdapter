@@ -1,0 +1,13 @@
+inherit:
+  - artifacts/config/v0200/v0200-_default.yaml
+  - artifacts/config/v020x_benchmarks/v0661a/v0661a-_base.yaml
+  - artifacts/config/v0200/methods/clean/clean_sac_adapter_v2_less.yaml
+
+
+mymethod:
+  args: 
+    actor_act_at_end: True
+
+meta:
+  run_name: v0661a-fc10
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)

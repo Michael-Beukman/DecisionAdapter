@@ -1,0 +1,10 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0851a/v0851a-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_unaware_more_comparable_activation.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0851a-aa3
+method:
+  load_checkpoint: v0611a-aa3
+  load_checkpoint_if_big_seed: v0711a-aa3

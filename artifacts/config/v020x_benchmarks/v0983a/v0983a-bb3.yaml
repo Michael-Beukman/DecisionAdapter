@@ -1,0 +1,12 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0983a/v0983a-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_concat_more_comparable_deep_activation.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0983a-bb3
+method:
+  load_checkpoint: v0683a-bb3
+  load_checkpoint_if_big_seed: v0783a-bb3
+train:
+  context_file: artifacts/config/v0200/contexts/cartpole_all/masspole/0.yaml

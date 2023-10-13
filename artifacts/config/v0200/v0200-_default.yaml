@@ -1,0 +1,10 @@
+meta:
+  project_name: DynamicsGeneralisation
+  run_name: v0200-_default
+  experiment_name: v0200
+  message: This uses the genrlise library, and is the default configuration
+  file: src/runs/v0200/v0200.py
+infra:
+  gpus:  1
+  seeds: 8
+  cores: 8

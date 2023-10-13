@@ -1,0 +1,36 @@
+meta:
+  run_name: v0681c-_base
+  experiment_name: v0681c
+  message: GenRLise(.; CP)
+  is_clean_rl: True
+
+infra:
+  gpus:  auto
+  seeds: 8
+  cores: 8
+
+env:
+  name: CartPoleContinuous
+  args:
+    flatten_state: True
+
+train:
+  context_encoder: 
+    name: Normalised
+    args:
+      context_dimension: 5
+      min: [ 0,  0,  0,  0,  0]
+      max: [ 9.8,  1.0,  0.1,  6,  10.0]
+  do_train: True
+  steps: 100000
+  checkpoint_frequency: 20000
+
+
+eval:
+  episodes: 90
+  context_file:
+    - artifacts/config/v0200/contexts/cartpole_all/force_mag/eval.yaml
+    - artifacts/config/v0200/contexts/cartpole_all/gravity/eval.yaml
+    - artifacts/config/v0200/contexts/cartpole_all/length/eval.yaml
+    - artifacts/config/v0200/contexts/cartpole_all/masscart/eval.yaml
+    - artifacts/config/v0200/contexts/cartpole_all/masspole/eval.yaml

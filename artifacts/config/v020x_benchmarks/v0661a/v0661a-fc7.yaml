@@ -1,0 +1,17 @@
+inherit:
+  - artifacts/config/v0200/v0200-_default.yaml
+  - artifacts/config/v020x_benchmarks/v0661a/v0661a-_base.yaml
+  - artifacts/config/v0200/methods/clean/clean_sac_adapter_v2_less.yaml
+
+method:
+  args: 
+    policy_params:
+      hypernetwork_kwargs:
+        put_adapter_at_start: True
+        put_adapter_at_end: True
+        hnet_kwargs:
+          threshold_to_assert_sizes: 20
+
+meta:
+  run_name: v0661a-fc7
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)

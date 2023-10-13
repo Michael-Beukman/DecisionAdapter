@@ -1,0 +1,7 @@
+method:
+  name: Clean_SAC_Other_Canonical_FLAP
+  args:
+    use_context_adapter_to_eval: True
+    critic_net_arch: [120, 120, 120]
+    actor_net_arch: [120, 120, 120]
+    adapter_net_arch: [240, 240, 240]

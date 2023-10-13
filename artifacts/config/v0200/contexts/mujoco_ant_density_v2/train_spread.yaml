@@ -1,0 +1,4 @@
+dims: 1
+desc: 'Train{Default}'
+name: SequenceSampler
+list_of_contexts: [[ 5.0], [ 35.0], [ 75.0]]

@@ -1,0 +1,36 @@
+meta:
+  run_name: v0774b-_base
+  experiment_name: v0774b
+  message: GenRLise(.; ComplexODEBoundedReward)
+  is_clean_rl: True
+
+infra:
+  gpus:  auto
+  seeds: 16
+  start_seed: 8
+  cores: 8
+
+env:
+  name: ComplexODEBoundedReward
+  args:
+    force_mag: 10  
+train:
+    context_encoder: 
+      name: Normalised
+      args:
+        context_dimension: 2
+        min: [ 0, 0]
+        max: [ 5, 5]
+    do_train: True
+    steps: 300000
+    context_file: artifacts/config/v0200/contexts/proper_ode_two/train/sparse_just_five_add_one.yaml
+    checkpoint_frequency: 50000
+
+
+eval:
+  episodes: 1323
+  context_file:
+    - artifacts/config/v0200/contexts/proper_ode_two/eval/eval_two_dim_cartesian.yaml
+    - artifacts/config/v0200/contexts/proper_ode_two/eval/eval_extended_dim_1_with_zero.yaml
+    - artifacts/config/v0200/contexts/proper_ode_two/eval/eval_extended_dim_1.yaml
+    - artifacts/config/v0200/contexts/proper_ode_two/eval/eval_extended_dim_2.yaml

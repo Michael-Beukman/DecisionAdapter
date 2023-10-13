@@ -1,0 +1,44 @@
+env:
+  args:
+    flatten_state: true
+  name: CartPoleContinuous
+eval:
+  context_file:
+  - artifacts/config/v0200/contexts/cp/eval_extended_multiple_5_proper.yaml
+  episodes: 1505
+infra:
+  cores: 8
+  gpus: auto
+  seeds: 16
+meta:
+  experiment_name: v0851e
+  is_clean_rl: true
+  message: GenRLise(.; ComplexODEBoundedReward)
+  run_name: v0851e-_base
+train:
+  context_encoder:
+    args:
+      context_dimension: 5
+      noise:
+        sigma: 0.5
+        type: gaussian
+    base:
+      args:
+        context_dimension: 5
+        max:
+        - 9.8
+        - 1.0
+        - 0.1
+        - 6
+        - 10.0
+        min:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      name: Normalised
+    name: NoisyConsistent
+  context_file: artifacts/config/v0200/contexts/cp/train_4_sparse.yaml
+  do_train: true
+  steps: 0

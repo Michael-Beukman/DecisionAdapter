@@ -1,0 +1,40 @@
+meta:
+  run_name: v0612a-_base
+  experiment_name: v0612a
+  message: GenRLise(.; ComplexODEBoundedReward)
+  is_clean_rl: True
+
+infra:
+  gpus:  auto
+  seeds: 8
+  cores: 8
+
+env:
+  name: CartPoleContinuous
+  args:
+    flatten_state: True
+
+train:
+  context_encoder: 
+    name: NoisyConsistent
+    args:
+      context_dimension: 5
+      noise:
+        type: gaussian
+        sigma: 0.2
+    base:
+      name: Normalised
+      args:
+        context_dimension: 5
+        min: [ 0,  0,  0,  0,  0]
+        max: [ 9.8,  1.0,  0.1,  6,  10.0]
+  do_train: True
+  steps: 1000000
+  context_file: artifacts/config/v0200/contexts/cp/train_4_sparse.yaml
+  checkpoint_frequency: 100000
+
+
+eval:
+  context_file:
+  - artifacts/config/v0200/contexts/cp/eval_extended_multiple_5_proper.yaml
+  episodes: 1505

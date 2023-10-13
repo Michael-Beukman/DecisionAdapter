@@ -1,0 +1,5 @@
+method:
+  name: Clean_SAC_Adapter_Contextualize_V12_Every_Layer
+  args: 
+    sb3_init_kwargs:
+      verbose: True

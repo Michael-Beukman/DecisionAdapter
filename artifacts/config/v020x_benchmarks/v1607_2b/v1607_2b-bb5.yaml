@@ -1,0 +1,14 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v1607_2b/v1607_2b-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_concat_more_comparable_deep_activation.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v1607_2b-bb5
+
+
+train:
+  context_encoder:
+    args:
+      context_dimension: 101
+      extra_dimensions: 100

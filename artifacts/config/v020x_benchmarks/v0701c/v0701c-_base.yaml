@@ -1,0 +1,35 @@
+meta:
+  run_name: v0701c-_base
+  experiment_name: v0701c
+  message: GenRLise(.; ComplexODEBoundedReward)
+  is_clean_rl: True
+
+infra:
+  gpus:  auto
+  seeds: 16
+  start_seed: 8
+  cores: 8
+
+
+env:
+  name: ComplexODEBoundedReward
+  args:
+    force_mag: 100
+  
+train:
+    context_encoder: 
+      name: Normalised
+      args:
+        context_dimension: 1
+        min: [ 0]
+        max: [ 2]
+    do_train: True
+    steps: 300000
+    context_file: artifacts/config/v0200/contexts/ode/train/very_sparse_ode_neg55_all_state.yaml
+    checkpoint_frequency: 100000
+
+
+eval:
+  episodes: 1203
+  context_file:
+    - artifacts/config/v0200/contexts/ode/eval/extended_short_eval.yaml

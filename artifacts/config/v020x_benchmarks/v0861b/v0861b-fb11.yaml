@@ -1,0 +1,17 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0861b/v0861b-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_adapter_v1_less.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0861b-fb11
+method:
+  args:
+    policy_params:
+      hypernetwork_kwargs:
+        hnet_kwargs:
+          threshold_to_assert_sizes: 20
+        put_adapter_at_end: true
+        put_adapter_before_last_layer: false
+  load_checkpoint: v0661b-fb11
+  load_checkpoint_if_big_seed: v0761b-fb11

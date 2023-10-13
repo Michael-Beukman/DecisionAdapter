@@ -1,0 +1,10 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0805d/v0805d-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_concat_more_comparable_deep_activation.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v0805d-bb3
+method:
+  load_checkpoint: v0605d-bb3
+  load_checkpoint_if_big_seed: v0705d-bb3

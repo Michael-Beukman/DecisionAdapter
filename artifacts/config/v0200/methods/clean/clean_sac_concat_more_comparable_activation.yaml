@@ -1,0 +1,5 @@
+method:
+  name: Clean_SAC_Concat
+  args: 
+    net_arch: [288, 288]
+    actor_act_at_end: True

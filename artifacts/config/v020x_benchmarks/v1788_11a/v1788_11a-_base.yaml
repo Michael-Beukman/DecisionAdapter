@@ -1,0 +1,40 @@
+env:
+  args:
+    flatten_state: true
+  name: MujocoAntEnvTimeLimitDensityV2
+eval:
+  context_file:
+  - artifacts/config/v0200/contexts/mujoco_ant_density_v2/eval_all.yaml
+  episodes: 1000
+  save_lengths: true
+infra:
+  cores: 8
+  disable_fp32: true
+  gpus: auto
+  seeds: 8
+meta:
+  experiment_name: v1788_11a
+  is_clean_rl: true
+  message: GenRLise(.; Cheetah)
+  run_name: v1788_11a-_base
+train:
+  checkpoint_frequency: 100000
+  context_encoder:
+    args:
+      fixed_vals: 0
+      context_dimension: 2
+      extra_dimensions: 1
+    base:
+      args:
+        context_dimension: 1
+        max:
+        - 75
+        min:
+        - 0
+      name: Normalised
+    name: DummyDimensions
+  context_file: artifacts/config/v0200/contexts/mujoco_ant_density_v2/train_spread.yaml
+  do_train: true
+  steps: 0
+  checkpoints_to_eval: [0, 200000, 400000, 600000, 800000]
+  skip_main_eval: False

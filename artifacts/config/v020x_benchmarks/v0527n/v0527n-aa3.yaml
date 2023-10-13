@@ -1,0 +1,7 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v0527n/v0527n-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_unaware_more_comparable_activation.yaml
+meta:
+  message: GenRLise(AdapterLess; Cheetah)
+  run_name: v0527n-aa3

@@ -1,0 +1,14 @@
+inherit:
+- artifacts/config/v0200/v0200-_default.yaml
+- artifacts/config/v020x_benchmarks/v1708_3b/v1708_3b-_base.yaml
+- artifacts/config/v0200/methods/clean/clean_sac_adapter_v1_less.yaml
+meta:
+  message: GenRLise(AdapterLess; ComplexODEBoundedReward)
+  run_name: v1708_3b-fb4
+method:
+  load_checkpoint: v1708_2b-fb4
+train:
+  context_encoder:
+    args:
+      context_dimension: 21
+      extra_dimensions: 20
